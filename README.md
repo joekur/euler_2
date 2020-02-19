@@ -13,8 +13,16 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 ## Solution
 
 ```ruby
-puts Fibonacci.sum_evens(4_000_000)
-# 4613732
+Fibonacci.sum_evens(4_000_000)
+# => 4613732
+```
+
+Also provides a `sum_where` method that accepts a block allowing you to specify which terms are valid to sum:
+
+```ruby
+Fibonacci.sum_where(60) { |el| el % 3 == 0 }
+# => 24
+# (3 + 21)
 ```
 
 ## Run specs
